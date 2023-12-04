@@ -9,9 +9,14 @@ import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
+
 @Data
+@Table
 public class TacoOrder implements Serializable {
     private static final long serialVersionUID = 1L;
+    @Id
     private Long id;
     private Date placedAt;
     @NotBlank(message="Delivery name is required")
