@@ -27,12 +27,12 @@ public class OrderController {
         return "orderForm";
     }
     @PostMapping
-    public String processOrder(@Valid TacoOrder order, Errors errors, SessionStatus sessionStatus) {
-        if (errors.hasErrors()) {
-            return "orderForm";
-        }
+    public String processOrder( TacoOrder order) {
+//        if (errors.hasErrors()) {
+//            return "orderForm";
+//        }
         orderRepo.save(order);
-        sessionStatus.setComplete();
+//        sessionStatus.setComplete();
         return "redirect:/";
     }
 }
